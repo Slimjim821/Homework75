@@ -34,7 +34,7 @@ DEBUG = True
 if settings.DEBUG:
     ALLOWED_HOSTS = ['*']
 else:
-    ALLOWED_HOSTS = ['buffteks.net', 'www.buffteks.net', '.herokuapp.com', 'localhost', '127.0.0.1']
+    ALLOWED_HOSTS = ['159.223.152.181', '.herokuapp.com', 'localhost', '127.0.0.1','127.0.0.0']
 
 SITE_ID = 1
 
@@ -76,8 +76,15 @@ MIDDLEWARE = [
 # this is from dj_database_url and is optional but more succinct
 
 # clear out defaults
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+#DATABASES = {}
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 ROOT_URLCONF = 'blog_deploy.urls'
 
