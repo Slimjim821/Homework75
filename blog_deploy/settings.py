@@ -32,10 +32,12 @@ SECRET_KEY = '9$vw346tn^f78o7fi@yj8oco_x$*%4ew6$wicw3^$9hhbb$#-t'
 
 DEBUG = True
 
-if settings.DEBUG:
-    ALLOWED_HOSTS = ['*']
-else:
-    ALLOWED_HOSTS = ['159.223.152.181', '.herokuapp.com', 'localhost', '127.0.0.1','127.0.0.0']
+ALLOWED_HOSTS = ['159.223.152.181', '.herokuapp.com', 'localhost', '127.0.0.1','127.0.0.0']
+
+# if settings.DEBUG:
+#     ALLOWED_HOSTS = ['127.0.0.1']
+# else:
+#     ALLOWED_HOSTS = ['159.223.152.181', '.herokuapp.com', 'localhost', '127.0.0.1','127.0.0.0']
 
 SITE_ID = 1
 
@@ -80,23 +82,23 @@ MIDDLEWARE = [
 #DATABASES = {}
 #DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'HW75',
-        'USER': 'slimjim821',
-        'PASSWORD': 'Missy2003',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'HW75',
+#         'USER': 'slimjim821',
+#         'PASSWORD': 'Missy2003',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 SECRET_KEY = '9$vw346tn^f78o7fi@yj8oco_x$*%4ew6$wicw3^$9hhbb$#-t'
 
@@ -157,7 +159,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 # MEDIA/UPLOADS
 MEDIA_URL = '/media/'
@@ -171,7 +173,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # WHITENOISE_USE_FINDERS = True
 
 # email stuff - using mailgun
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
