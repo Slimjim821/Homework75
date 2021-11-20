@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 #SECRET_KEY = os.environ.get('SECRET_KEY')
 SECRET_KEY = '9$vw346tn^f78o7fi@yj8oco_x$*%4ew6$wicw3^$9hhbb$#-t'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['159.223.152.181', '.herokuapp.com', 'localhost', '127.0.0.1','127.0.0.0']
 
