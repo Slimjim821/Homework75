@@ -35,7 +35,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['159.223.152.181', '.herokuapp.com', 'localhost', '127.0.0.1','127.0.0.0']
 
 # if settings.DEBUG:
-#     ALLOWED_HOSTS = ['127.0.0.1']
+#     ALLOWED_HOSTS = ['127.0.0.1', '127.0.0.0', 'localhost']
 # else:
 #     ALLOWED_HOSTS = ['159.223.152.181', '.herokuapp.com', 'localhost', '127.0.0.1','127.0.0.0']
 
@@ -82,23 +82,23 @@ MIDDLEWARE = [
 #DATABASES = {}
 #DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'HW75',
-#         'USER': 'slimjim821',
-#         'PASSWORD': 'Missy2003',
-#         'HOST': 'localhost',
-#         'PORT': '',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'HW75',
+        'USER': 'slimjim821',
+        'PASSWORD': 'Missy2003',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 SECRET_KEY = '9$vw346tn^f78o7fi@yj8oco_x$*%4ew6$wicw3^$9hhbb$#-t'
 
@@ -168,9 +168,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # WHITENOISE
 
 # Optionally, we can compress static files with Whitenoise
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Also, we can have Whitenoise look for static files in each app rather than running collectstatic
-# WHITENOISE_USE_FINDERS = True
+WHITENOISE_USE_FINDERS = True
 
 # email stuff - using mailgun
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

@@ -7,6 +7,7 @@ app_name = 'blog'
 urlpatterns = [
     # post views
     path('', views.post_list, name='post_list'),
+    path('blog/', views.post_post, name='post_post'),
     path('about/', views.about, name='about'),    
     path('contact/', views.contact, name='conact'),
     path('<int:year>/<int:month>/<int:day>/<slug:post>/',
