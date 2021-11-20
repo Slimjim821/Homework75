@@ -82,23 +82,24 @@ MIDDLEWARE = [
 #DATABASES = {}
 #DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'HW75',
-        'USER': 'slimjim821',
-        'PASSWORD': 'Missy2003',
-        'HOST': 'localhost',
-        'PORT': '',
+if settings.DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'blog_deploy_db',
+            'USER': 'jim',
+            'PASSWORD': 'Missy2003',
+            'HOST': 'localhost',
+            'PORT': '',
+        }
+    }
 
 SECRET_KEY = '9$vw346tn^f78o7fi@yj8oco_x$*%4ew6$wicw3^$9hhbb$#-t'
 
